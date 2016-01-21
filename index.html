@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+	<title>Template-login</title>
+	<meta name="viewport" content="width=device-width, user-scalable=1" />
+	<meta name="keywords" content="keywords, template"/>
+	<meta name="description" content="template description"/>
+	<link rel="icon" type="image/png" href="">
+	<link rel="stylesheet" type="text/css" href="./_dist/public/css/bundle.css">
+</head>
+<body>
+	<header class="header">
+		<div class="header-mobile">
+			<div class="header-logo">Logo</div>
+			<button class="header-btn-nav" id="btnMenu">
+				<i class="fa fa-bars fa-2x"></i>
+			</button>
+		</div>
+		<nav class="header-menu-navbar">
+			<ul class="header-menu-list" id="navbarMenu">
+				<li class="header-menu-list-item" id="a-view-1">
+					<a>view-1</a>
+				</li>
+				<li class="header-menu-list-item" id="a-view-2">
+					<a>view-2</a>
+				</li>
+				<li class="header-menu-list-item" id="a-view-3">
+					<a>Signup</a>
+				</li>
+				<li class="header-menu-list-item" id="a-view-4">
+					<a>Login</a>
+				</li>
+			</ul>
+		</nav>
+	</header>
+	<section>
+		<div class="view" id="view-0"></div>
+		<div class="view" id="view-1">
+			View 1
+		</div>
+		<div class="view" id="view-2">
+			View 2
+		</div>
+		<div class="view" id="view-3">
+			<div class="content">
+				what do you waiting for?
+			</div>
+			<form class="well">
+				<legend>Signup</legend>
+				<label class="control-label">Email</label>
+				<input type="email" class="form-control" id="signupEmail" placeholder="Email">
+				<label class="control-label">Password</label>
+				<input type="password" class="form-control" id="signupPassword" placeholder="" ng-model="passwordjs">
+				<label class="control-label">Re enter your Password</label>
+				<input type="password" class="form-control" id="signupPassword2" placeholder="" ng-model="password2js">
+				<div class="alert alert-dismissible alert-danger" ng-if="passwordjs !== password2js">
+					<button type="button" class="close" data-dismiss="alert"><i class="fa fa-times"></i></button>
+					<strong>Oh snap!</strong> You must enter the same password.
+				</div>
+				<button type="submit" class="btn btn-default">Login</button>
+			</form>
+		</div>
+		<div class="view" id="view-4" ng-init="forgotyourpasswordjs = false">
+			<form class="well" ng-show="forgotyourpasswordjs === false" ng-hide="forgotyourpasswordjs === true">
+				<legend>Login</legend>
+				<label class="control-label">Email</label>
+				<input type="email" class="form-control" id="loginEmail" placeholder="Email">
+				<label class="control-label">Password</label>
+				<input type="password" class="form-control" id="loginPassword" placeholder="">
+				<div class="alert alert-dismissible alert-danger" ng-if="false">
+					<button type="button" class="close" data-dismiss="alert"><i class="fa fa-times"></i></button>
+					<strong>Oh snap!</strong> and try submitting again.
+				</div>
+				<button type="submit" class="btn btn-default">Login</button>
+				<div class="control-label">
+				<a ng-click="forgotyourpasswordjs = true">Forgot your password?</a>
+				</div>
+			</form>
+
+			<form class="well" ng-show="forgotyourpasswordjs === true" ng-hide="forgotyourpasswordjs === false">
+				<legend>Recover your account</legend>
+				<label class="control-label">We'll send you a new password. Please, confirm your email.</label>
+				<input type="email" class="form-control" id="recoverEmail" placeholder="Email">
+				<div class="alert alert-dismissible alert-danger" ng-if="false">
+					<button type="button" class="close" data-dismiss="alert"><i class="fa fa-times"></i></button>
+					<strong>Oh snap!</strong> and try submitting again.
+				</div>
+				<button type="submit" class="btn btn-default">Confirm</button>
+				<div class="control-label">
+				<a ng-click="forgotyourpasswordjs = false">back.</a>
+				</div>
+			</form>
+		</div>
+	</section>
+	<footer>
+		footer template-login
+	</footer>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<script type="text/javascript" src="./_dist/public/js/bundle.js"></script>
+</body>
+</html>
